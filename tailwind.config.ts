@@ -52,6 +52,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				brand: {
+					primary: 'hsl(var(--brand-primary))',
+					secondary: 'hsl(var(--brand-secondary))',
+					accent: 'hsl(var(--brand-accent))'
+				},
+				hero: {
+					overlay: 'hsl(var(--hero-overlay))',
+					text: 'hsl(var(--hero-text))',
+					accent: 'hsl(var(--hero-accent))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +77,19 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-button': 'var(--gradient-button)',
+				'gradient-button-secondary': 'var(--gradient-button-secondary)'
+			},
+			boxShadow: {
+				'elegant': 'var(--shadow-elegant)',
+				'button': 'var(--shadow-button)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bounce': 'var(--transition-bounce)'
 			},
 			keyframes: {
 				'accordion-down': {
