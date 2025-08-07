@@ -42,11 +42,17 @@ All colors MUST be HSL.
     --brand-primary: 197 100% 31%;
     --brand-secondary: 39 100% 57%;
     --brand-accent: 197 71% 73%;
+    --brand-pink: 330 81% 60%;
     
     /* Hero specific colors */
     --hero-overlay: 220 43% 11% / 0.7;
     --hero-text: 0 0% 100%;
     --hero-accent: 39 100% 57%;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-backdrop: blur(20px);
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(197 100% 31% / 0.9), hsl(220 43% 11% / 0.8));

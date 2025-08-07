@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import AISearchBar from "./AISearchBar";
 
 const Hero = () => {
   return (
@@ -19,29 +19,29 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8">
+          {/* Eyebrow Text */}
+          <div className="text-hero-accent text-sm md:text-base font-medium tracking-wide uppercase">
+            For Modern Dental Clinics
+          </div>
+          
           {/* Main Headline */}
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold text-hero-text leading-tight">
-              Your Clinic's
+              Less Chaos,
               <br />
-              <span className="italic font-light text-hero-accent">Favorite Place</span>
+              <span className="text-hero-text">More Control</span>
             </h1>
             
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed">
-              A personalized dental management experience that helps you streamline operations, 
-              enhance patient engagement, and grow with confidence — in just a few minutes a day.
+              Streamline your appointments, messages, and marketing so your clinic runs smoother, 
+              your staff feels lighter, and your patients keep coming back.
             </p>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="lg" className="min-w-[200px]">
-              Take a 1-Min Quiz
-            </Button>
-            <Button variant="heroSecondary" size="lg" className="min-w-[200px]">
-              Get Started for Free
-            </Button>
+          {/* AI Search Bar */}
+          <div className="pt-8">
+            <AISearchBar />
           </div>
         </div>
       </div>

@@ -55,7 +55,8 @@ export default {
 				brand: {
 					primary: 'hsl(var(--brand-primary))',
 					secondary: 'hsl(var(--brand-secondary))',
-					accent: 'hsl(var(--brand-accent))'
+					accent: 'hsl(var(--brand-accent))',
+					pink: 'hsl(var(--brand-pink))'
 				},
 				hero: {
 					overlay: 'hsl(var(--hero-overlay))',
@@ -82,6 +83,9 @@ export default {
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-button': 'var(--gradient-button)',
 				'gradient-button-secondary': 'var(--gradient-button-secondary)'
+			},
+			backdropFilter: {
+				'glass': 'var(--glass-backdrop)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
