@@ -90,14 +90,6 @@ const AISearchBar = () => {
         </div>
       </div>
       
-      {/* Login Button */}
-      <div className="mt-4 text-center">
-        <Link to="/login">
-          <Button variant="heroSecondary" size="sm" className="text-sm">
-            Already have an account? Login
-          </Button>
-        </Link>
-      </div>
 
       {/* Response */}
       {response && (

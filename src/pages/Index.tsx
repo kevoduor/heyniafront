@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/seo";
 
 const Index = () => {
+  useEffect(() => {
+    updateMetaTags(
+      "Dental Software for Modern Clinics | HeyNia",
+      "Discover HeyNia, the AI-powered dental clinic software helping modern practices streamline operations, enhance patient engagement, and grow with confidence.",
+      "https://dental-clinic-management-software.com"
+    );
+  }, []);
   const dataFeatures = [
     {
       title: "A Unified Gateway to All Your Data",

@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/seo";
 
 const Features = () => {
+  useEffect(() => {
+    updateMetaTags(
+      "Smart Features for Busy Dental Clinics - HeyNia",
+      "Discover how HeyNia's features simplify clinic operations, marketing, and patient communication with intelligent automation.",
+      "https://dental-clinic-management-software.com/dental-practice-automation-features"
+    );
+  }, []);
   const features = [
     {
       title: "A Unified Gateway to All Your Data",

@@ -1,9 +1,15 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/seo";
 
 const BookDemo = () => {
   useEffect(() => {
+    updateMetaTags(
+      "Book a Demo - HeyNia Dental Software Demo & Free Trial",
+      "Schedule a personalized demo of HeyNia dental software. See how AI-powered automation can transform your clinic operations.",
+      "https://dental-clinic-management-software.com/book-demo"
+    );
     // Redirect to Calendly
     window.location.href = "https://calendly.com/niahai";
   }, []);

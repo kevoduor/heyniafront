@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/seo";
 
 const Blog = () => {
+  useEffect(() => {
+    updateMetaTags(
+      "Dental Marketing Insights and Clinic Growth Tips - HeyNia Blog",
+      "Marketing guides, SEO advice, and AI strategies for dental clinic owners who want to grow fast and smart.",
+      "https://dental-clinic-management-software.com/dental-marketing-automation-blog"
+    );
+  }, []);
   const blogPosts = [
     {
       title: "7 Marketing Ideas for Small Dental Clinics in 2025",

@@ -22,9 +22,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/our-story" element={<Story />} />
           <Route path="/story" element={<Story />} />
+          <Route path="/dental-practice-automation-features" element={<Features />} />
           <Route path="/features" element={<Features />} />
+          <Route path="/dental-software-pricing-plans" element={<Pricing />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/dental-marketing-automation-blog" element={<Blog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/book-demo" element={<BookDemo />} />

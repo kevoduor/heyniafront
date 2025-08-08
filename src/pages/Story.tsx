@@ -1,7 +1,16 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { updateMetaTags } from "@/utils/seo";
 
 const Story = () => {
+  useEffect(() => {
+    updateMetaTags(
+      "Why We Built HeyNia - A Mission-Driven Dental Tech Company",
+      "Learn about our purpose: building better dental software while supporting global efforts to end gender-based violence.",
+      "https://dental-clinic-management-software.com/our-story"
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

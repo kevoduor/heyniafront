@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-hero-text">HeyNia</Link>
+              <Link to="/" className="text-2xl font-bold text-foreground">HeyNia</Link>
             </div>
           </div>
 
@@ -32,7 +32,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-hero-text/80 hover:text-hero-text px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-foreground/80 hover:text-foreground px-3 py-2 text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -43,7 +43,7 @@ const Navigation = () => {
           {/* Login and Book Demo */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login">
-              <Button variant="ghost" size="sm" className="text-hero-text hover:bg-white/10">
+              <Button variant="ghost" size="sm" className="text-foreground hover:bg-white/10">
                 Login
               </Button>
             </Link>
@@ -60,7 +60,7 @@ const Navigation = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-hero-text hover:bg-white/10"
+              className="text-foreground hover:bg-white/10"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -74,12 +74,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-md rounded-lg mt-2 border border-white/20">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 backdrop-blur-md rounded-lg mt-2 border border-border">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-hero-text/80 hover:text-hero-text block px-3 py-2 text-base font-medium transition-colors duration-200"
+                  className="text-foreground/80 hover:text-foreground block px-3 py-2 text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -87,7 +87,7 @@ const Navigation = () => {
               ))}
               <div className="px-3 py-2 space-y-2">
                 <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="ghost" size="sm" className="w-full text-hero-text hover:bg-white/10">
+                  <Button variant="ghost" size="sm" className="w-full text-foreground hover:bg-muted">
                     Login
                   </Button>
                 </Link>

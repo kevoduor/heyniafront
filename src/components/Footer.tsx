@@ -129,7 +129,7 @@ const Footer = () => {
               HeyNia supports those navigating uncertainty, building momentum through steady effort and honest work.
             </p>
             <div className="mt-4 text-white/40 text-xs">
-              © 2025 HeyNia. All rights reserved. | Designed by @santu_design
+              © 2025 HeyNia. All rights reserved. | Designed by <a href="https://x.com/oduooor" target="_blank" rel="noopener noreferrer" className="hover:text-white/60 transition-colors">https://x.com/oduooor</a>
             </div>
           </div>
         </div>

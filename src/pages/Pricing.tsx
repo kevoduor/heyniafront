@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
+import { updateMetaTags } from "@/utils/seo";
 
 const Pricing = () => {
+  useEffect(() => {
+    updateMetaTags(
+      "HeyNia Pricing Plans - Dental Software with Real ROI",
+      "Explore affordable dental software pricing with AI features, offline support, and marketing automation starting at just $99 per month.",
+      "https://dental-clinic-management-software.com/dental-software-pricing-plans"
+    );
+  }, []);
   const plans = [
     {
       name: "Basic Plan",
