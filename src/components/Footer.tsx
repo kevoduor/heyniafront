@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import footerBackground from "@/assets/footer-background.jpg";
+import footerBackground from "@/assets/footer-background-mountain.jpg";
 
 const Footer = () => {
   const footerLinks = {
@@ -39,42 +39,36 @@ const Footer = () => {
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
       
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Top section */}
-        <div className="mb-12">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="mb-8 md:mb-0">
-              <h2 className="text-3xl font-bold text-white mb-2">HeyNia</h2>
-              <p className="text-white/80 max-w-md">
-                Built for lifelong learners. Dental software that helps modern practices streamline operations and grow with confidence.
-              </p>
-            </div>
-            
-            {/* Newsletter Signup */}
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-              <input
-                type="email"
-                placeholder="Enter your email..."
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand-pink"
-              />
-              <button className="px-6 py-3 bg-brand-pink text-white font-semibold rounded-lg hover:bg-brand-pink/90 transition-colors duration-200">
-                Join Newsletter
+        {/* Top section with quote */}
+        <div className="mb-16 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              The climb is part of it
+            </h2>
+            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+              Growth doesn't happen at the top. It happens in the effort, in the friction, 
+              in every moment you choose to keep going.
+            </p>
+            <Link to="/book-demo">
+              <button className="px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-lg hover:bg-white/30 transition-all duration-300">
+                Take the Next Step
               </button>
-            </div>
+            </Link>
           </div>
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div>
-            <h3 className="text-white font-semibold mb-4">Explore</h3>
-            <ul className="space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-4xl mx-auto">
+          <div className="text-center">
+            <h3 className="text-white font-semibold mb-4 text-lg">Explore</h3>
+            <ul className="space-y-3">
               {footerLinks.explore.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200">
+                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200 text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -82,25 +76,19 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold mb-4">Support</h3>
-            <ul className="space-y-2">
+          <div className="text-center">
+            <h3 className="text-white font-semibold mb-4 text-lg">Support</h3>
+            <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200">
+                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200 text-sm">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+              {footerLinks.legal.slice(0, 2).map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-white/70 hover:text-white transition-colors duration-200 text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -108,33 +96,40 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-white font-semibold mb-4">Follow us</h3>
-            <ul className="space-y-2">
-              {footerLinks.social.map((link) => (
+          <div className="text-center">
+            <h3 className="text-white font-semibold mb-4 text-lg">Connect</h3>
+            <ul className="space-y-3">
+              {footerLinks.social.slice(0, 4).map((link) => (
                 <li key={link.name}>
                   <a 
                     href={link.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-white/70 hover:text-white transition-colors duration-200"
+                    className="text-white/70 hover:text-white transition-colors duration-200 text-sm"
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
+              <li>
+                <span className="text-white/70 text-sm">hey@heynia.com</span>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom section */}
         <div className="border-t border-white/20 pt-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="text-white/60 mb-4 md:mb-0">
-              <p>HeyNia ET 2025. All rights reserved.</p>
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <span className="text-white font-bold text-lg">HeyNia</span>
+              <span className="text-white/40 text-sm">®</span>
             </div>
-            <div className="text-white/60">
-              <p>Email: hey@heynia.com</p>
+            <p className="text-white/50 text-sm">
+              HeyNia supports those navigating uncertainty, building momentum through steady effort and honest work.
+            </p>
+            <div className="mt-4 text-white/40 text-xs">
+              © 2025 HeyNia. All rights reserved. | Designed by @santu_design
             </div>
           </div>
         </div>

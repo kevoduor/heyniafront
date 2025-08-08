@@ -130,5 +130,21 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-display: swap;
+  }
+  
+  /* Performance optimizations */
+  img {
+    @apply object-cover;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Loading states */
+  .loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }

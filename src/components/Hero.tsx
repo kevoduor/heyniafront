@@ -13,34 +13,34 @@ const Hero = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero"></div>
+      {/* Gradient Overlay - reduced opacity for better image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {/* Eyebrow Text */}
           <div className="text-hero-accent text-sm md:text-base font-medium tracking-wide uppercase">
             For Modern Dental Clinics
           </div>
           
           {/* Main Headline */}
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-hero-text leading-tight">
+          <div className="space-y-3 md:space-y-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
               Less Chaos,
               <br />
               <span className="text-hero-text">More Control</span>
             </h1>
             
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed px-4">
               Streamline your appointments, messages, and marketing so your clinic runs smoother, 
               your staff feels lighter, and your patients keep coming back.
             </p>
           </div>
 
           {/* AI Search Bar */}
-          <div className="pt-8">
+          <div className="pt-4 md:pt-8">
             <AISearchBar />
           </div>
         </div>
