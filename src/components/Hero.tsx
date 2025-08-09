@@ -27,15 +27,12 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="space-y-3 md:space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
-              Less Chaos,
-              <br />
-              <span className="text-hero-text">More Control</span>
+              More patients, less hassle
             </h1>
             
             {/* Subheadline */}
             <p className="text-lg sm:text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed px-4">
-              Streamline your appointments, messages, and marketing so your clinic runs smoother, 
-              your staff feels lighter, and your patients keep coming back.
+              Automate reminders, track records, and see where your clinic can grow all in one simple system.
             </p>
           </div>
 

@@ -32,8 +32,8 @@ const App = () => (
           <Route path="/dental-marketing-automation-blog" element={<Blog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dental-software-marketing-faqs" element={<(await import('./pages/FAQs')).default />} />
-          <Route path="/faq" element={<(await import('./pages/FAQs')).default />} />
+          <Route path="/dental-software-marketing-faqs" element={<FAQs />} />
+          <Route path="/faq" element={<FAQs />} />
           <Route path="/book-demo" element={<BookDemo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

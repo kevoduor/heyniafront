@@ -12,6 +12,7 @@ const Pricing = () => {
       "https://dental-clinic-management-software.com/dental-software-pricing-plans"
     );
   }, []);
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>("monthly");
   const plans = [
     {
       name: "Basic Plan",
@@ -163,9 +164,6 @@ const Pricing = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-brand-pink text-white font-semibold px-8 py-3 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200">
                 Compare Plans
-              </button>
-              <button className="bg-brand-pink text-white font-semibold px-8 py-3 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200">
-                Book Demo
               </button>
             </div>
           </section>
