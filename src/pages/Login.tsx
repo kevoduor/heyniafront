@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { updateMetaTags } from "@/utils/seo";
+import loginBg from "@/assets/footer-background.jpg";
 
 const Login = () => {
   useEffect(() => {
@@ -17,11 +18,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-primary via-brand-secondary to-brand-accent flex items-center justify-center p-4">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_50%)]"></div>
-      </div>
+    <div className="min-h-screen relative flex items-center justify-center p-4" style={{
+      backgroundImage: `url(${loginBg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Login Card */}
       <div className="relative w-full max-w-md">
@@ -113,27 +117,27 @@ const Login = () => {
             </div>
 
             {/* Social Login */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <button 
                 type="button"
-                className="flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-200"
+                className="flex items-center justify-center px-4 py-3 bg-white text-gray-900 border border-white/20 rounded-lg hover:bg-white/90 transition-all duration-200"
               >
-                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                  <path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                <svg className="w-5 h-5 mr-2" viewBox="0 0 48 48">
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.915 31.91 29.383 36 24 36c-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.156 7.957 3.043l5.657-5.657C34.842 6.053 29.7 4 24 4 12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20c0-1.341-.138-2.651-.389-3.917z"/>
+                  <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 16.045 18.961 12 24 12c3.059 0 5.842 1.156 7.957 3.043l5.657-5.657C34.842 6.053 29.7 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+                  <path fill="#4CAF50" d="M24 44c5.311 0 10.206-2.042 13.86-5.373l-6.396-5.402C29.383 36 24 36 24 36c-5.345 0-9.86-3.445-11.494-8.241l-6.59 5.077C8.24 39.556 15.56 44 24 44z"/>
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-1.02 2.91-3.085 5.335-5.699 6.944.002-.001.003-.001.005-.002l6.396 5.402C35.206 41.958 40.111 44 44 44c8.836 0 16-7.163 16-16 0-1.341-.138-2.651-.389-3.917z"/>
                 </svg>
-                Google
+                Continue with Google
               </button>
               <button 
                 type="button"
-                className="flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-200"
+                className="flex items-center justify-center px-4 py-3 bg-black text-white border border-white/20 rounded-lg hover:bg-black/90 transition-all duration-200"
               >
-                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/>
+                <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.365 1.43c0 1.14-.93 2.07-2.07 2.07-1.15 0-2.08-.93-2.08-2.07C12.215.28 13.145 0 14.295 0c1.14 0 2.07.93 2.07 2.07zM21.56 16.75c-.05-3.26 2.66-4.8 2.78-4.87-1.52-2.21-3.88-2.51-4.71-2.55-2.01-.2-3.93 1.17-4.95 1.17-1.04 0-2.51-1.14-4.13-1.11-2.13.03-4.08 1.24-5.17 3.16-2.23 3.85-.57 9.54 1.6 12.66 1.06 1.53 2.32 3.25 3.98 3.19 1.6-.06 2.2-1.02 4.13-1.02 1.91 0 2.47 1.02 4.15.98 1.72-.03 2.81-1.55 3.86-3.1 1.24-1.82 1.75-3.58 1.78-3.67-.04-.02-3.41-1.3-3.46-5.04z"/>
                 </svg>
-                Facebook
+                Continue with Apple
               </button>
             </div>
           </form>

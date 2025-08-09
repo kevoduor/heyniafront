@@ -15,13 +15,13 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-2xl font-bold text-foreground">HeyNia</Link>
+              <Link to="/" className="text-xl md:text-2xl font-semibold tracking-tight text-foreground">HeyNia</Link>
             </div>
           </div>
 
@@ -45,11 +45,6 @@ const Navigation = () => {
             <Link to="/login">
               <Button variant="ghost" size="sm" className="text-foreground hover:bg-white/10">
                 Login
-              </Button>
-            </Link>
-            <Link to="/book-demo">
-              <Button variant="pink" size="sm">
-                Book Demo
               </Button>
             </Link>
           </div>
@@ -89,11 +84,6 @@ const Navigation = () => {
                 <Link to="/login" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="ghost" size="sm" className="w-full text-foreground hover:bg-muted">
                     Login
-                  </Button>
-                </Link>
-                <Link to="/book-demo" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="pink" size="sm" className="w-full">
-                    Book Demo
                   </Button>
                 </Link>
               </div>

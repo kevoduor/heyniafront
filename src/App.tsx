@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import Login from "./pages/Login";
 import BookDemo from "./pages/BookDemo";
 import NotFound from "./pages/NotFound";
+import FAQs from "./pages/FAQs";
 
 const queryClient = new QueryClient();
 
@@ -31,8 +32,9 @@ const App = () => (
           <Route path="/dental-marketing-automation-blog" element={<Blog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dental-software-marketing-faqs" element={<(await import('./pages/FAQs')).default />} />
+          <Route path="/faq" element={<(await import('./pages/FAQs')).default />} />
           <Route path="/book-demo" element={<BookDemo />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

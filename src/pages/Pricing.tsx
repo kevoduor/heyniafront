@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
@@ -81,6 +81,24 @@ const Pricing = () => {
             </p>
           </div>
 
+          {/* Billing Toggle */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center bg-muted border rounded-full p-1">
+              <button
+                onClick={() => setBillingCycle('monthly')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === 'monthly' ? 'bg-brand-pink text-white' : 'text-foreground hover:bg-muted/80'}`}
+              >
+                Monthly
+              </button>
+              <button
+                onClick={() => setBillingCycle('annual')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${billingCycle === 'annual' ? 'bg-brand-pink text-white' : 'text-foreground hover:bg-muted/80'}`}
+              >
+                Annual
+              </button>
+            </div>
+          </div>
+
           {/* Pricing Cards */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {plans.map((plan, index) => (
@@ -101,13 +119,15 @@ const Pricing = () => {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
                   <p className="text-muted-foreground mb-4">{plan.description}</p>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                    <span className="text-muted-foreground">/month</span>
+                  <div className="mb-4" key={billingCycle}>
+                    <span className="text-4xl font-bold text-foreground animate-fade-in">{billingCycle === 'annual' ? plan.annual : plan.price}</span>
+                    <span className="text-muted-foreground">/{billingCycle === 'annual' ? 'year' : 'month'}</span>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    Annual: {plan.annual} (save 2 months)
-                  </p>
+                  {billingCycle === 'monthly' && (
+                    <p className="text-sm text-muted-foreground">
+                      Annual: {plan.annual} (save 2 months)
+                    </p>
+                  )}
                 </div>
 
                 <ul className="space-y-3 mb-8">

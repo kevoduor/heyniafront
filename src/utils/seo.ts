@@ -1,4 +1,4 @@
-export const updateMetaTags = (title: string, description: string, url?: string) => {
+export const updateMetaTags = (title: string, description: string, url?: string, image: string = "/og-heynia.jpg") => {
   // Update page title
   document.title = title;
   
@@ -28,6 +28,11 @@ export const updateMetaTags = (title: string, description: string, url?: string)
   if (ogUrl && url) {
     ogUrl.setAttribute('content', url);
   }
+
+  let ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) {
+    ogImage.setAttribute('content', image);
+  }
   
   // Update Twitter tags
   let twitterTitle = document.querySelector('meta[name="twitter:title"]');
@@ -38,5 +43,10 @@ export const updateMetaTags = (title: string, description: string, url?: string)
   let twitterDescription = document.querySelector('meta[name="twitter:description"]');
   if (twitterDescription) {
     twitterDescription.setAttribute('content', description);
+  }
+
+  let twitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (twitterImage) {
+    twitterImage.setAttribute('content', image);
   }
 };

@@ -220,9 +220,6 @@ const Index = () => {
               <button className="bg-brand-pink text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200 text-lg">
                 Compare Plans
               </button>
-              <button className="bg-brand-pink text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200 text-lg">
-                Book Demo
-              </button>
             </div>
           </div>
         </div>
