@@ -21,8 +21,8 @@ const Hero = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 md:space-y-8">
           {/* Eyebrow Text */}
-          <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full shadow-button">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-pink"></span>
+          <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-brand-green backdrop-blur-md px-4 py-1.5 rounded-full shadow-button animate-enter hover-scale">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
             For Modern Dental Clinics
           </div>
           

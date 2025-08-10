@@ -56,7 +56,8 @@ export default {
 					primary: 'hsl(var(--brand-primary))',
 					secondary: 'hsl(var(--brand-secondary))',
 					accent: 'hsl(var(--brand-accent))',
-					pink: 'hsl(var(--brand-pink))'
+					pink: 'hsl(var(--brand-pink))',
+					green: 'hsl(var(--brand-green))'
 				},
 				hero: {
 					overlay: 'hsl(var(--hero-overlay))',
