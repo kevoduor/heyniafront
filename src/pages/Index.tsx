@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import { updateMetaTags } from "@/utils/seo";
+import { ShieldCheck, BarChart3, Bot, MessageCircle, Clock } from "lucide-react";
 
 const Index = () => {
   useEffect(() => {
@@ -101,6 +102,21 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {dataFeatures.map((feature, index) => (
               <div key={index} className="bg-card rounded-xl p-8 border">
+                {index === 0 && (
+                  <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                    <BarChart3 className="w-5 h-5 text-brand-pink" />
+                  </div>
+                )}
+                {index === 1 && (
+                  <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                    <Bot className="w-5 h-5 text-brand-pink" />
+                  </div>
+                )}
+                {index === 2 && (
+                  <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                    <ShieldCheck className="w-5 h-5 text-brand-pink" />
+                  </div>
+                )}
                 <h3 className="text-2xl font-bold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-brand-pink font-semibold mb-4">{feature.subtitle}</p>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
@@ -119,6 +135,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {realTimeFeatures.map((feature, index) => (
               <div key={index} className="bg-background rounded-xl p-8 border">
+                <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                  {index === 0 && <Clock className="w-5 h-5 text-brand-pink" />}
+                  {index === 1 && <BarChart3 className="w-5 h-5 text-brand-pink" />}
+                  {index === 2 && <Bot className="w-5 h-5 text-brand-pink" />}
+                </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
@@ -129,23 +150,24 @@ const Index = () => {
 
       {/* Clinic Manager */}
       <section className="py-20 bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-muted rounded-2xl p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Your Dedicated Clinic Manager</h2>
-            <p className="text-lg text-muted-foreground mb-8">It works around the clock:</p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {clinicManagerTasks.map((task, index) => (
-                <div key={index} className="bg-background rounded-lg p-6 border">
-                  <p className="text-foreground font-semibold">{task}</p>
-                </div>
-              ))}
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-muted rounded-2xl p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Your Dedicated Clinic Manager</h2>
+              <p className="text-lg text-muted-foreground mb-6">It works around the clock:</p>
+              <img src="/lovable-uploads/23cca6e8-8da2-4663-bcf3-5ff457c6fdae.png" alt="Dedicated clinic manager" className="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" />
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                {clinicManagerTasks.map((task, index) => (
+                  <div key={index} className="bg-background rounded-lg p-6 border">
+                    <p className="text-foreground font-semibold">{task}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-muted-foreground mb-8">So you stay one step ahead without lifting a finger.</p>
+              <button className="bg-brand-pink text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200 text-lg">
+                Get Started
+              </button>
             </div>
-            <p className="text-muted-foreground mb-8">So you stay one step ahead without lifting a finger.</p>
-            <button className="bg-brand-pink text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-pink/90 transition-colors duration-200 text-lg">
-              Get Started
-            </button>
           </div>
-        </div>
       </section>
 
       {/* Security Section */}
@@ -157,6 +179,9 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {securityFeatures.map((feature, index) => (
               <div key={index} className="bg-background rounded-xl p-6 border">
+                <div className="w-9 h-9 rounded-full bg-brand-pink/10 flex items-center justify-center mb-3">
+                  <ShieldCheck className="w-4 h-4 text-brand-pink" />
+                </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
               </div>

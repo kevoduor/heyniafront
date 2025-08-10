@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-xl md:text-2xl font-semibold tracking-tight text-foreground">HeyNia</Link>
+              <Link to="/" className="text-lg md:text-xl font-medium tracking-tight text-foreground">HeyNia</Link>
             </div>
           </div>
 
@@ -43,7 +43,7 @@ const Navigation = () => {
           {/* Login and Book Demo */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/login">
-              <Button variant="ghost" size="sm" className="text-foreground hover:bg-white/10">
+              <Button variant="pink" size="sm" className="rounded-full">
                 Login
               </Button>
             </Link>
@@ -82,7 +82,7 @@ const Navigation = () => {
               ))}
               <div className="px-3 py-2 space-y-2">
                 <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="ghost" size="sm" className="w-full text-foreground hover:bg-muted">
+                  <Button variant="pink" size="sm" className="w-full rounded-full">
                     Login
                   </Button>
                 </Link>

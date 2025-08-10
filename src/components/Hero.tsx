@@ -1,7 +1,8 @@
 import { ChevronDown } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import AISearchBar from "./AISearchBar";
-
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section 
@@ -20,7 +21,8 @@ const Hero = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 md:space-y-8">
           {/* Eyebrow Text */}
-          <div className="text-black text-sm md:text-base font-medium tracking-wide uppercase bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full inline-block">
+          <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full shadow-button">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-pink"></span>
             For Modern Dental Clinics
           </div>
           
@@ -39,6 +41,11 @@ const Hero = () => {
           {/* AI Search Bar */}
           <div className="pt-4 md:pt-8">
             <AISearchBar />
+            <div className="mt-6 flex justify-center">
+              <Link to="/login">
+                <Button variant="pink" size="lg" className="rounded-full px-6">Log in</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

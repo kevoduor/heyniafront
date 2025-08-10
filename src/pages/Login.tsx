@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { Eye, EyeOff, Mail, Lock, ShieldCheck, Bot, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { updateMetaTags } from "@/utils/seo";
 
@@ -120,10 +120,25 @@ const Login = () => {
           <div className="relative min-h-[300px] md:min-h-full">
             <img
               src="/lovable-uploads/23cca6e8-8da2-4663-bcf3-5ff457c6fdae.png"
-              alt="Login visual"
+              alt="Login visual for dental software"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 grid grid-cols-3 gap-3">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 text-white">
+                <ShieldCheck className="w-4 h-4 text-brand-pink" />
+                <span className="text-xs">HIPAA-ready</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 text-white">
+                <Bot className="w-4 h-4 text-brand-pink" />
+                <span className="text-xs">AI Assistant</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 text-white">
+                <BarChart3 className="w-4 h-4 text-brand-pink" />
+                <span className="text-xs">Insights</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

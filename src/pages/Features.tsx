@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { updateMetaTags } from "@/utils/seo";
+import { ShieldCheck, BarChart3, Bot, Clock } from "lucide-react";
 
 const Features = () => {
   useEffect(() => {
@@ -110,6 +111,11 @@ const Features = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="bg-card rounded-xl p-6 border">
+                  <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                    {index === 0 && <BarChart3 className="w-5 h-5 text-brand-pink" />}
+                    {index === 1 && <Bot className="w-5 h-5 text-brand-pink" />}
+                    {index === 2 && <ShieldCheck className="w-5 h-5 text-brand-pink" />}
+                  </div>
                   <h3 className="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
                   <p className="text-brand-pink font-semibold mb-4">{feature.subtitle}</p>
                   <p className="text-muted-foreground">{feature.description}</p>
@@ -126,6 +132,11 @@ const Features = () => {
             <div className="grid md:grid-cols-3 gap-8">
               {realTimeFeatures.map((feature, index) => (
                 <div key={index} className="bg-card rounded-xl p-6 border">
+                  <div className="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center mb-4">
+                    {index === 0 && <Clock className="w-5 h-5 text-brand-pink" />}
+                    {index === 1 && <BarChart3 className="w-5 h-5 text-brand-pink" />}
+                    {index === 2 && <Bot className="w-5 h-5 text-brand-pink" />}
+                  </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>
                 </div>
@@ -161,6 +172,9 @@ const Features = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="bg-card rounded-xl p-6 border">
+                  <div className="w-9 h-9 rounded-full bg-brand-pink/10 flex items-center justify-center mb-3">
+                    <ShieldCheck className="w-4 h-4 text-brand-pink" />
+                  </div>
                   <h3 className="text-lg font-bold text-foreground mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground text-sm">{feature.description}</p>
                 </div>
