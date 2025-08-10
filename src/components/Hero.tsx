@@ -43,7 +43,7 @@ const Hero = () => {
             <AISearchBar />
             <div className="mt-6 flex justify-center">
               <Link to="/login">
-                <Button variant="pink" size="lg" className="rounded-full px-6">Log in</Button>
+                <Button variant="pink" size="lg" className="rounded-full px-6">Get Started</Button>
               </Link>
             </div>
           </div>

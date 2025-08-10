@@ -136,8 +136,8 @@ All colors MUST be HSL.
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    letter-spacing: -0.04em;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
     font-weight: 800;
   }
   
@@ -154,5 +154,14 @@ All colors MUST be HSL.
   /* Loading states */
   .loading {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    background-color: hsl(var(--glass-bg));
+    border-color: hsl(var(--glass-border));
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-backdrop);
   }
 }

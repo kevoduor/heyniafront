@@ -105,8 +105,8 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`relative bg-card rounded-2xl p-8 border ${
-                  plan.popular ? 'border-brand-pink shadow-xl' : ''
+                className={`relative rounded-2xl p-8 border transition-all duration-300 ${
+                  plan.popular ? 'bg-foreground text-background shadow-elegant scale-[1.02] border-brand-pink' : 'bg-card hover:shadow-elegant'
                 }`}
               >
                 {plan.popular && (
@@ -118,11 +118,11 @@ const Pricing = () => {
                 )}
 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <p className="text-muted-foreground mb-4">{plan.description}</p>
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-background' : 'text-foreground'}`}>{plan.name}</h3>
+                  <p className={`${plan.popular ? 'text-background/80' : 'text-muted-foreground'} mb-4`}>{plan.description}</p>
                   <div className="mb-4" key={billingCycle}>
-                    <span className="text-4xl font-bold text-foreground animate-fade-in">{billingCycle === 'annual' ? plan.annual : plan.price}</span>
-                    <span className="text-muted-foreground">/{billingCycle === 'annual' ? 'year' : 'month'}</span>
+                    <span className={`text-4xl font-bold animate-fade-in ${plan.popular ? 'text-background' : 'text-foreground'}`}>{billingCycle === 'annual' ? plan.annual : plan.price}</span>
+                    <span className={`${plan.popular ? 'text-background/80' : 'text-muted-foreground'}`}>/{billingCycle === 'annual' ? 'year' : 'month'}</span>
                   </div>
                   {billingCycle === 'monthly' && (
                     <p className="text-sm text-muted-foreground">
@@ -135,7 +135,7 @@ const Pricing = () => {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <Check className="w-5 h-5 text-brand-pink mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-muted-foreground text-sm">{feature}</span>
+                      <span className={`${plan.popular ? 'text-background/90' : 'text-muted-foreground'} text-sm`}>{feature}</span>
                     </li>
                   ))}
                 </ul>
