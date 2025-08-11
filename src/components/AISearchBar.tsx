@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Search, Send } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Search, Send, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -7,17 +7,30 @@ const AISearchBar = () => {
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [response, setResponse] = useState("");
+  const [apiKey, setApiKey] = useState("");
+  const [showKey, setShowKey] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSearch = async () => {
+  useEffect(() => {
+    const saved = localStorage.getItem("kluster_api_key");
+    if (saved) setApiKey(saved);
+  }, []);
+const handleSearch = async () => {
     if (!query.trim()) return;
+    if (!apiKey) {
+      setErrorMsg("Please add your Kluster API key to search.");
+      return;
+    }
     
     setIsSearching(true);
+    setErrorMsg("");
+    setResponse("");
     
     try {
-      const response = await fetch('https://api.kluster.ai/v1/chat/completions', {
+      const res = await fetch('https://api.kluster.ai/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer 696eb0b0-c887-4add-91a4-45ebe59a49a7`,
+          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -37,19 +50,24 @@ const AISearchBar = () => {
         }),
       });
       
-      const data = await response.json();
+      if (!res.ok) {
+        const errText = await res.text();
+        throw new Error(errText || `HTTP ${res.status}`);
+      }
+      
+      const data = await res.json();
       
       if (data.choices && data.choices[0]) {
         setResponse(data.choices[0].message.content);
       } else {
-        setResponse(`Based on your question about "${query}", HeyNia can help you streamline your dental practice operations. Our AI-powered platform offers comprehensive solutions for appointment management, patient communication, and marketing automation. Would you like to learn more about specific features like automated reminders, WhatsApp integration, or our analytics dashboard?`);
+        setResponse("I couldn't find a direct answer. Try rephrasing your question or ask about features, pricing, or automation.");
       }
     } catch (error) {
-      console.error('API Error:', error);
-      setResponse(`Based on your question about "${query}", HeyNia can help you streamline your dental practice operations. Our AI-powered platform offers comprehensive solutions for appointment management, patient communication, and marketing automation. Would you like to learn more about specific features like automated reminders, WhatsApp integration, or our analytics dashboard?`);
+      console.error('Kluster API Error:', error);
+      setErrorMsg("We couldn't reach Kluster. Please check your API key and try again.");
+    } finally {
+      setIsSearching(false);
     }
-    
-    setIsSearching(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -75,6 +93,15 @@ const AISearchBar = () => {
             />
           </div>
           <Button
+            onClick={() => setShowKey((s) => !s)}
+            variant="heroSecondary"
+            size="icon"
+            className="m-2 rounded-full flex-shrink-0"
+            aria-label="Set Kluster API key"
+          >
+            <KeyRound className="w-4 h-4" />
+          </Button>
+          <Button
             onClick={handleSearch}
             disabled={!query.trim() || isSearching}
             variant="pink"
@@ -89,7 +116,31 @@ const AISearchBar = () => {
           </Button>
         </div>
       </div>
-      
+
+      {showKey && (
+        <div className="mt-2 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-3 py-2">
+          <KeyRound className="w-4 h-4 text-white/70" />
+          <input
+            type="password"
+            value={apiKey}
+            onChange={(e) => setApiKey(e.target.value)}
+            placeholder="Enter Kluster API key"
+            className="flex-1 bg-transparent text-white placeholder-white/60 focus:outline-none text-sm"
+          />
+          <Button
+            variant="heroSecondary"
+            size="sm"
+            onClick={() => {
+              localStorage.setItem("kluster_api_key", apiKey);
+              setShowKey(false);
+            }}
+          >
+            Save
+          </Button>
+        </div>
+      )}
+
+      {errorMsg && <p className="mt-2 text-destructive text-sm">{errorMsg}</p>}
 
       {/* Response */}
       {response && (

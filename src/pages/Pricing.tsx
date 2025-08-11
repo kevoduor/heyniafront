@@ -20,15 +20,11 @@ const Pricing = () => {
       annual: "$990",
       description: "Perfect for solo practitioners and small clinics",
       features: [
-        "Core Management Features: Manage appointments, patient records, billing, tasks, and reports from a centralized dashboard",
-        "Basic Support: Standard business hours support",
-        "Limited Integrations: Essential third-party integrations",
-        "Cloud Hosting/Storage",
-        "Offline Support",
-        "Web App & Dashboard",
-        "Google Reviews Monitoring",
-        "Email Support with automated appointment confirmations and reminders",
-        "Monthly digital marketing newsletter with tips, SEO guides, and acquisition strategies"
+        "Core Management Features: appointments, patient records, billing, tasks, and reports from one dashboard",
+        "Basic Support during standard business hours",
+        "Limited Integrations with essential third-party tools",
+        "Cloud Hosting & Offline Support for uninterrupted clinic operations",
+        "Web App Access & Google Reviews Monitoring with email-based confirmations and reminders"
       ]
     },
     {
@@ -42,7 +38,7 @@ const Pricing = () => {
         "Advanced Analytics & Reporting",
         "Priority Support",
         "Enhanced Integrations",
-        "SMS & WhatsApp Communication",
+        "Multi-channel Communication via SMS and WhatsApp for reminders and follow-ups",
         "Mobile App (Android & iOS)"
       ]
     },
@@ -53,15 +49,11 @@ const Pricing = () => {
       description: "Everything in Professional Plan, plus enterprise features",
       features: [
         "All Professional Plan features",
-        "Customizable Features",
-        "Dedicated Account Manager",
-        "24/7 Support",
-        "Additional Training & Onboarding",
-        "All Chat Channels: WhatsApp, SMS, Email, Telegram, Facebook Messenger",
-        "Custom Mobile App for Clinics",
-        "Referral Marketing System",
-        "AI Chatbot for Marketing Advice",
-        "Local SEO Optimization"
+        "Customizable Features tailored to your clinic’s needs",
+        "Dedicated Account Manager for personalized assistance",
+        "24/7 Support for immediate help anytime",
+        "Additional Training & Onboarding for the full team",
+        "Communication Across All Channels: WhatsApp, SMS, Email, Telegram, and Facebook Messenger"
       ]
     }
   ];
