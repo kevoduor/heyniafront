@@ -13,7 +13,12 @@ const AISearchBar = () => {
 
   useEffect(() => {
     const saved = localStorage.getItem("kluster_api_key");
-    if (saved) setApiKey(saved);
+    if (saved) {
+      setApiKey(saved);
+      setShowKey(false);
+    } else {
+      setShowKey(true);
+    }
   }, []);
 const handleSearch = async () => {
     if (!query.trim()) return;
@@ -115,6 +120,9 @@ const handleSearch = async () => {
             )}
           </Button>
         </div>
+        {!apiKey && (
+          <p className="mt-2 text-white/70 text-xs">Add your Kluster API key with the key icon to enable AI search.</p>
+        )}
       </div>
 
       {showKey && (
@@ -124,6 +132,12 @@ const handleSearch = async () => {
             type="password"
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                localStorage.setItem("kluster_api_key", apiKey);
+                setShowKey(false);
+              }
+            }}
             placeholder="Enter Kluster API key"
             className="flex-1 bg-transparent text-white placeholder-white/60 focus:outline-none text-sm"
           />

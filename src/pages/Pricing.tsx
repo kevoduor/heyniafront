@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Check } from "lucide-react";
+import { ClipboardList, Headphones, Plug, Cloud, Globe, BarChart3, LifeBuoy, Puzzle, MessageSquare, Smartphone, Settings, UserCheck, Clock, GraduationCap, Megaphone } from "lucide-react";
 import { updateMetaTags } from "@/utils/seo";
 
 const Pricing = () => {
@@ -20,40 +20,38 @@ const Pricing = () => {
       annual: "$990",
       description: "Perfect for solo practitioners and small clinics",
       features: [
-        "Core Management Features: appointments, patient records, billing, tasks, and reports from one dashboard",
-        "Basic Support during standard business hours",
-        "Limited Integrations with essential third-party tools",
-        "Cloud Hosting & Offline Support for uninterrupted clinic operations",
-        "Web App Access & Google Reviews Monitoring with email-based confirmations and reminders"
+        { label: "Core Management Features: appointments, patient records, billing, tasks, and reports from one dashboard", icon: ClipboardList },
+        { label: "Basic Support during standard business hours", icon: Headphones },
+        { label: "Limited Integrations with essential third-party tools", icon: Plug },
+        { label: "Cloud Hosting & Offline Support for uninterrupted clinic operations", icon: Cloud },
+        { label: "Web App Access & Google Reviews Monitoring with email-based confirmations and reminders", icon: Globe }
       ]
     },
     {
       name: "Professional Plan",
       price: "$249",
       annual: "$2,490",
-      description: "Everything in Basic Plan, plus advanced features",
+      description: "Includes all Basic Plan features, plus advanced capabilities",
       popular: true,
       features: [
-        "All Basic Plan features",
-        "Advanced Analytics & Reporting",
-        "Priority Support",
-        "Enhanced Integrations",
-        "Multi-channel Communication via SMS and WhatsApp for reminders and follow-ups",
-        "Mobile App (Android & iOS)"
+        { label: "Advanced Analytics & Reporting for patient trends, revenue, and marketing performance", icon: BarChart3 },
+        { label: "Priority Support with faster resolution times", icon: LifeBuoy },
+        { label: "Enhanced Integrations for expanded compatibility", icon: Puzzle },
+        { label: "Multi-channel Communication via SMS and WhatsApp for reminders and follow-ups", icon: MessageSquare },
+        { label: "Mobile App (Android & iOS) for on-the-go management and patient bookings", icon: Smartphone }
       ]
     },
     {
       name: "Premium Plan",
       price: "$349",
       annual: "$3,490",
-      description: "Everything in Professional Plan, plus enterprise features",
+      description: "Includes all Professional Plan features, plus enterprise-grade services",
       features: [
-        "All Professional Plan features",
-        "Customizable Features tailored to your clinic’s needs",
-        "Dedicated Account Manager for personalized assistance",
-        "24/7 Support for immediate help anytime",
-        "Additional Training & Onboarding for the full team",
-        "Communication Across All Channels: WhatsApp, SMS, Email, Telegram, and Facebook Messenger"
+        { label: "Customizable Features tailored to your clinic’s needs", icon: Settings },
+        { label: "Dedicated Account Manager for personalized assistance", icon: UserCheck },
+        { label: "24/7 Support for immediate help anytime", icon: Clock },
+        { label: "Additional Training & Onboarding for the full team", icon: GraduationCap },
+        { label: "Communication Across All Channels: WhatsApp, SMS, Email, Telegram, and Facebook Messenger", icon: Megaphone }
       ]
     }
   ];
@@ -124,12 +122,15 @@ const Pricing = () => {
                 </div>
 
                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <Check className="w-5 h-5 text-brand-pink mt-0.5 mr-3 flex-shrink-0" />
-                      <span className={`${plan.popular ? 'text-background/90' : 'text-muted-foreground'} text-sm`}>{feature}</span>
-                    </li>
-                  ))}
+                  {(plan.features as { label: string; icon: any }[]).map((feature, featureIndex) => {
+                    const Icon = feature.icon;
+                    return (
+                      <li key={featureIndex} className="flex items-start">
+                        <Icon className="w-5 h-5 text-brand-pink mt-0.5 mr-3 flex-shrink-0" />
+                        <span className={`${plan.popular ? 'text-background/90' : 'text-muted-foreground'} text-sm`}>{feature.label}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <button 

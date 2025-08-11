@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
       
       {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="space-y-6 md:space-y-8">
           {/* Eyebrow Text */}
           <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-brand-green backdrop-blur-md px-4 py-1.5 rounded-full shadow-button animate-enter hover-scale">
@@ -28,12 +28,12 @@ const Hero = () => {
           
           {/* Main Headline */}
           <div className="space-y-3 md:space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
+            <h1 className="mx-auto px-4 max-w-[16ch] sm:max-w-[22ch] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
               More patients, less hassle
             </h1>
             
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-hero-text/90 max-w-3xl mx-auto leading-relaxed px-6">
               Automate reminders, track records, and see where your clinic can grow all in one simple system.
             </p>
           </div>
