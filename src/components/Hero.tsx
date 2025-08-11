@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import AISearchBar from "./AISearchBar";
 import { Button } from "@/components/ui/button";
@@ -21,14 +21,15 @@ const Hero = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="space-y-6 md:space-y-8">
           {/* Eyebrow Text */}
-          <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-brand-green backdrop-blur-md px-4 py-1.5 rounded-full shadow-button animate-enter hover-scale">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green"></span>
+          <div className="inline-flex items-center gap-2 text-hero-text text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase bg-brand-green backdrop-blur-md px-5 py-1.5 rounded-full shadow-button animate-enter hover-scale">
+            <Sparkles className="w-3.5 h-3.5" aria-hidden="true" />
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-green" aria-hidden="true"></span>
             For Modern Dental Clinics
           </div>
           
           {/* Main Headline */}
           <div className="space-y-3 md:space-y-4">
-            <h1 className="mx-auto px-4 max-w-[16ch] sm:max-w-[22ch] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
+            <h1 className="mx-auto max-w-[26ch] sm:max-w-[30ch] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-hero-text leading-tight">
               More patients, less hassle
             </h1>
             

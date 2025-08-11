@@ -116,7 +116,7 @@ const Pricing = () => {
                   </div>
                   {billingCycle === 'monthly' && (
                     <p className="text-sm text-muted-foreground">
-                      Annual: {plan.annual} (save 2 months)
+                      Annual: {plan.annual} (or {plan.price}/month)
                     </p>
                   )}
                 </div>
