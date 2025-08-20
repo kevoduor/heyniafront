@@ -1,26 +1,35 @@
 const fs = require('fs');
 const path = require('path');
-
-const folder = path.join(__dirname, 'src'); // source folder
-const files = [];
+const folder = path.join(process.cwd(), 'src');
 
 function walkDir(dir) {
   fs.readdirSync(dir).forEach(file => {
     const fullPath = path.join(dir, file);
     if (fs.lstatSync(fullPath).isDirectory()) {
       walkDir(fullPath);
-    } else if (fullPath.endsWith('.jsx') || fullPath.endsWith('.js')) {
-      files.push(fullPath);
+    } else if (
+      fullPath.endsWith('.js') ||
+      fullPath.endsWith('.jsx') ||
+      fullPath.endsWith('.ts') ||
+      fullPath.endsWith('.tsx')
+    ) {
+      let content = fs.readFileSync(fullPath, 'utf8');
+      const newContent = content
+        .replace(
+          /(href|to|window\.location\.href)\s*=\s*['"][^'"]*['"]/g,
+          '$1="https://login.heynia.com"'
+        )
+        .replace(
+          /navigate\(\s*['"]\/login['"]\s*\)/g,
+          'window.location.href="https://login.heynia.com"'
+        );
+      if (newContent !== content) {
+        fs.writeFileSync(fullPath, newContent, 'utf8');
+        console.log('Updated: ' + fullPath);
+      }
     }
   });
 }
 
 walkDir(folder);
 
-files.forEach(file => {
-  let content = fs.readFileSync(file, 'utf8');
-  content = content.replace(/(href|to|window\.location\.href)\s*=\s*["'][^"']*["']/g, `$1="https://login.heynia.com"`);
-  fs.writeFileSync(file, content, 'utf8');
-});
-
-console.log(`Updated ${files.length} files with new login URL.`);
