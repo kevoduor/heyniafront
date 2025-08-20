@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="pt-4 md:pt-8">
             <AISearchBar />
             <div className="mt-6 flex justify-center">
-              <Link to="/login">
+              <Link to="https://login.heynia.com">
                 <Button variant="pink" size="lg" className="rounded-full px-6">Get Started</Button>
               </Link>
             </div>

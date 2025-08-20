@@ -26,8 +26,8 @@ const Login = () => {
           <div className="p-8 md:p-10">
             {/* Logo + Back Home */}
             <div className="flex items-center justify-between mb-8">
-              <Link to="/" className="text-lg font-semibold tracking-tight text-foreground hover:opacity-80 transition">HeyNia</Link>
-              <Link to="/" className="text-sm text-muted-foreground hover:text-foreground transition">← Home</Link>
+              <Link to="https://login.heynia.com" className="text-lg font-semibold tracking-tight text-foreground hover:opacity-80 transition">HeyNia</Link>
+              <Link to="https://login.heynia.com" className="text-sm text-muted-foreground hover:text-foreground transition">← Home</Link>
             </div>
 
             <h1 className="text-2xl font-bold text-foreground mb-2">Welcome back!</h1>
@@ -55,7 +55,7 @@ const Login = () => {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label htmlFor="password" className="block text-sm font-medium text-foreground">Password</label>
-                  <Link to="/forgot-password" className="text-xs text-brand-pink hover:opacity-80">Reset password</Link>
+                  <Link to="https://login.heynia.com" className="text-xs text-brand-pink hover:opacity-80">Reset password</Link>
                 </div>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5" />
@@ -110,7 +110,7 @@ const Login = () => {
               {/* Sign up link */}
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">
-                  Don't have an account? <Link to="/signup" className="text-brand-pink font-semibold hover:opacity-80">Create an account</Link>
+                  Don't have an account? <Link to="https://login.heynia.com" className="text-brand-pink font-semibold hover:opacity-80">Create an account</Link>
                 </p>
               </div>
             </form>

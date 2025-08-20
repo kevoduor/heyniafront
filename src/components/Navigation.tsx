@@ -21,7 +21,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Link to="/" className="text-lg md:text-xl font-medium tracking-tight text-foreground">HeyNia</Link>
+              <Link to="https://login.heynia.com" className="text-lg md:text-xl font-medium tracking-tight text-foreground">HeyNia</Link>
             </div>
           </div>
 
@@ -42,7 +42,7 @@ const Navigation = () => {
 
           {/* Login and Book Demo */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/login">
+            <Link to="https://login.heynia.com">
               <Button variant="pink" size="sm" className="rounded-full">
                 Login
               </Button>
@@ -81,7 +81,7 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="px-3 py-2 space-y-2">
-                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                <Link to="https://login.heynia.com" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="pink" size="sm" className="w-full rounded-full">
                     Login
                   </Button>
