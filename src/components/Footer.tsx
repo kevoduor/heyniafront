@@ -7,7 +7,7 @@ const Footer = () => {
       { name: "About", href: "/story" },
       { name: "Philosophy", href: "/story" },
       { name: "Our Story", href: "/story" },
-      { name: "Blog", href: "/blog" },
+//      { name: "Blog", href: "/blog" },
       { name: "Press", href: "/blog" },
     ],
     legal: [
