@@ -91,7 +91,6 @@ const Navigation = () => {
           </div>
         )}
       </div>
-  <Link href="/blog">Blog</Link>
     </nav>
   );
 };

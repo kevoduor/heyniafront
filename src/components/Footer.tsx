@@ -134,7 +134,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-  <Link href="/blog">Blog</Link>
     </footer>
   );
 };
