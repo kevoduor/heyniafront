@@ -1,4 +1,7 @@
 ---
+layout: BlogLayout
+---
+---
 title: "How AI is Transforming Dental Offices in the USA"
 metaTitle: "How AI is Transforming Dental Offices in the USA | HeyNia"
 metaDescription: "Explore how AI software is revolutionizing dental offices across the USA. Practical tips for dental clinics to optimize workflows and increase patient engagement."

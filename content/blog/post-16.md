@@ -1,4 +1,7 @@
 ---
+layout: BlogLayout
+---
+---
 title: "AI-Powered Dental Office Software Post 16"
 date: "2025-08-22"
 author: "Kevin Oduor"
